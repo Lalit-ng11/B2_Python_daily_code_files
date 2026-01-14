@@ -1,164 +1,143 @@
 '''
-Rules to define a Class:- 
-1.class keyword ,
-2.classname should start with Capital Letter.
-3.it should contain constructor method (__init__)
+oops concepts =>
+1.class:- 
+-rules=class name should get start with capital letter,init() method.
+
+2.object:- 
+3.Inheritance
+4.Encapsulation
+5.Polymorphism
+6.Abstraction
+Data Members(Variables) and Member Functions.
 '''
-# class Student:
-#     def __init__(self,id,name,course):
-#         self.id=id #instance variable/ Data Members(Variables)
-#         self.name=name 
-#         self.course=course
+# class Students:
+#     def __init__(self,name,course,city):
+#         self.name=name #instance Variable / Data Members(Variables)
+#         self.course=course 
+#         self.city=city
         
-#     def details(self): #Member Functions
-#         return f"student id is {self.id}.Name is {self.name} and course is {self.course}"
+#     def all_data(self):  #Member Functions.
+#         return f"Student name is {self.name}.which is having {self.course} course.student is from {self.city}."
+    
+# s1=Students("Rohit","MCA","Pune")  
+# # print(s1) #<__main__.Students object at 0x000001A084106A50>
+# print(s1.all_data()) #Student name is Rohit.which is having MCA course.student is from Pune.
 
-# s1=Student(101,"Rahul","PFS")
-# # print(s1)
-# '''<__main__.Student object at 0x000001CB440E6A50>'''
-# print(s1.details())
-
-# #Data Members(Variables) and Member Functions. 
+#3.Inheritance :- 
 '''
-oops concepts:- 
-class,objects,
-Inheritance:- properties of  Base /Parent class is inherited/accessed by Child class. is a relationship
-Types of Inheritance=>
-1.Single Inheritance[p-> c],
-2.Multiple Inheritance[p-> c,<- p] 
+1.Single Inheritance [p -> c]
+2.Multiple Inheritance [p1 -> c <- p2]
 3.Multilevel Inheritance[GP->P->C]
-4.Hirarchical Inheritance[P->c1
-                           ->c2]
-5.Hybrid Inheritance[combination of 2 or many types of inheritance],
-
-
-Encapsulation,
-Polymorphism,
-Abstaction
+4.Hirarchical Inheritance[p -> c1
+                            -> c2]
+5.Hybrid Inheritance [two or more types]
 '''
-#1.Single Inheritance[p-> c]
+
+#1.Single Inheritance [p -> c]
 # class App:
 #     def __init__(self,name,version,company):
-#         self.name=name  #Instance Variable
-#         self.version=version
-#         self.company=company
-        
-#     def app_info(self):
-#         return f"App name is {self.name}.it's version is {self.version}.company is {self.company}"
+#         self.name=name #instance Variable 
+#         self.version=version 
+#         self.company = company
     
-# class Insta(App): 
+#     def show_app(self):
+#         return f"Name of App is {self.name}.it's version is {self.version}. The company name is {self.company}"
+    
+# class Amazon(App):
 #     def __init__(self, name, version, company,feature):
 #         super().__init__(name, version, company)
+
 #         self.feature=feature
         
-#     def all_info(self):
-#         return f"App name is {self.name}.it's version is {self.version}.company is {self.company} and it is having {self.feature} feature."
+#     def all_data(self):
+#         return f"Name of App is {self.name}.it's version is {self.version}. The company name is {self.company} and feature is {self.feature} products."
     
-# info=Insta("Insta",142,"Meta","Reels")
-# print(info.all_info())
-'''
-o/p = 
-App name is Insta.it's version is 142.company is Meta and it is having Reels feature.
-'''
-    
-'''
-Task1 :- create class employee with name,id,dept,salary and create obj for it.
-Task2 :- create class product [Parent class] with pname,prize,mfg_location and class Info[child class]
+# datas = Amazon("Amazon",20,"Amazon","Buy")
+# print(datas.all_data()) 
+#Name of App is Amazon.it's version is 20. The company name is Amazon and feature is Buy products.
 
-'''
-#Class Variable 
-# class Employee:
+#Task1 => create a class called Employee with id,name,dept_name,city fields and create object for it.
+#Task2 => create a class called manager with if,name,dept_name and create a child class called emp wich inheritace the properties of parent class and having city field.
+
+
+#Day-2 oops 
+# class C_employee:
 #     def __init__(self,name,role,cname):
 #         self.name=name 
 #         self.role=role 
-#         self.cname=cname
+#         self.cname=cname 
         
-#     def display_data(self):
-#         return f"Employee name is {self.name}.who is working as {self.role} in {self.cname}."
+#     def all_data(self):
+#         return f"Employee name is {self.name}. who is working as {self.role} in {self.cname}"
     
-# e1=Employee("Jack","Developer","TCS")
-# e2=Employee("Virat","Data Analyst","TCS")
-# e3=Employee("Rohit","Tester","TCS")
-# e4=Employee("Shubh","Marketing Executive","TCS")
-    
-# print(e1.display_data())
-# print(e2.display_data())
-# print(e3.display_data())
-# print(e4.display_data())
+# e1=C_employee("Jack","Developer","Infosys")
+# e2=C_employee("Ketan","Sales","Infosys")
+# e3=C_employee("Sagar","Tester","Infosys")
+# e3=C_employee("Viraj","Marketing","Infosys")
+# e4=C_employee("Sourav","Manager","Infosys")
 
+# print(e1.all_data())
+# print(e2.all_data())
+# print(e3.all_data())
+# print(e4.all_data())
+''' 
+Employee name is Jack. who is working as Developer in Infosys
+Employee name is Ketan. who is working as Sales in Infosys
+Employee name is Viraj. who is working as Marketing in Infosys
+Employee name is Sourav. who is working as Manager in Infosys
+'''
 
-# class Employee: 
-#     cname = "TCS" #class Variable
+# class variable 
+# class C_employee:
+#     cname="Infosys" #class variable
 #     def __init__(self,name,role):
 #         self.name=name 
 #         self.role=role 
-      
         
-#     def display_data(self):
-#         return f"Employee name is {self.name}.who is working as {self.role} in {Employee.cname}."
-    
-# e1=Employee("Jack","Developer")
-# e2=Employee("Virat","Data Analyst")
-# e3=Employee("Rohit","Tester")
-# e4=Employee("Shubh","Marketing Executive")
-    
-# print(e1.display_data())
-# print(e2.display_data())
-# print(e3.display_data())
-# print(e4.display_data())
-
-'''Task1 => create a class called product with pname,prize,color,mfg_city'''
-
-# from abc import ABC,abstractmethod
-# #ABC = abstract base class
-# class Payment(ABC):
-#     @abstractmethod 
-#     def pay(self,amount):
-#         pass 
-
-# class Upipay(Payment):
-#     def pay(self,amount):
-#         return f"Paid Rs.{amount} via UPI."
-    
-# class Debitcard(Payment):
-#     def pay(self,amount):
-#         return f"Paid Rs.{amount} via Debitcard."
-    
-    
-# pay1 = Upipay()
-# print(pay1.pay(3000))
-
-# pay2 = Debitcard()
-# print(pay2.pay(5000))
-'''
-Task2 = add creditcard,netbanking,wallet classes
-'''
-'''  
-Paid Rs.3000 via UPI.
-Paid Rs.5000 via Debitcard.
-'''
-
-class Emp: 
-    def __init__(self,role,salary):
-        self.role=role 
-        self._salary=salary  #protected
         
-    def get_salary(self): 
-        return self._salary
+#     def all_data(self):
+#         return f"Employee name is {self.name}. who is working as {self.role} in {C_employee.cname}"
     
-class Sales_exe(Emp):
-    def get_salary(self):
-        return self._salary + 5000 
-    
-class Manager(Emp):
-    def get_salary(self):
-        return self._salary + 10000
-    
-emp1 = Sales_exe("Sales Excecutive",20000)
-emp2 = Manager("Manager",20000)
-print(emp1.get_salary())
-print(emp2.get_salary())
+# e1=C_employee("Jack","Developer")
+# e2=C_employee("Ketan","Sales")
+# e3=C_employee("Sagar","Tester")
+# e3=C_employee("Viraj","Marketing")
+# e4=C_employee("Sourav","Manager")
 
-'''  
-task:- add more roles like admin,hr,developer,analyst and add different allowance amount for all roles.
+# print(e1.all_data())
+# print(e2.all_data())
+# print(e3.all_data())
+# print(e4.all_data())
+
+#task1= create a class called product and pname,prize,color,mfg_loc [it should be same for all products.]
+
+#payment options:- 
+from abc import ABC,abstractmethod 
+#ABC => Abstract Base class 
+
+class Payment(ABC):
+    @abstractmethod 
+    def pay(self,amount):
+        pass 
+
+class Upi_pay(Payment):
+    def pay(self, amount):
+        return f"Paid Rs.{amount} by UPI."
+
+class Creditcard(Payment):
+    def pay(self, amount):
+        return f"Paid Rs.{amount} by Credit Card."
+    
+t1=Upi_pay()
+t2=Creditcard()
+
+print(t1.pay(2000))
+print(t2.pay(5999))
+''' 
+Paid Rs.2000 by UPI.
+Paid Rs.5999 by Credit Card.
+'''
+''' 
+task1=create a payment method for netbanking,wallet,Debit card and print message
+task2 = 
 '''
