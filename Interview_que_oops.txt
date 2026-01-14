@@ -1,0 +1,10 @@
+1️⃣ Explain the difference between a class variable and an instance variable in Python.
+2️⃣ What is method overriding in Python? When does it occur?
+3️⃣ Why does Python not support method overloading? How can similar behavior be achieved?
+4️⃣ Why is the self keyword required in Python instance methods?
+5️⃣ What is encapsulation in Python? How is it implemented?
+6️⃣ What is the purpose of the super() function in Python?
+7️⃣ What is the difference between a @staticmethod and a @classmethod?
+8️⃣ What is duck typing in Python? Why is it important?
+9️⃣ What is an abstract class in Python? Why do we use it?
+🔟 What is Method Resolution Order (MRO)? Why is it important?
