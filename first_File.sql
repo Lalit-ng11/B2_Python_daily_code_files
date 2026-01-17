@@ -122,3 +122,66 @@ INSERT INTO Vehicle VALUES
 (18, 'School Bus', 3200000, 'Diesel', 'Yellow', 6),
 (19, 'Pickup Truck', 1400000, 'Diesel', 'Grey', 4),
 (20, 'Electric Car', 1800000, 'Electric', 'White', 4);
+--  stored procedure 
+-- by syntax 
+-- delimiter //
+-- create procedure sp1()
+-- BEGIN
+-- 	-- Query 
+-- END //
+
+-- delimiter ;
+
+-- delimiter //
+-- create procedure pro1()
+-- begin
+-- select * from vehicle;
+-- select * from employee;
+-- end //
+
+-- delimiter ;
+
+-- call pro1();
+-- call auto_pro();
+call in_para(5);
+call in_para(1);
+
+call out_para(@mprice);
+select @mprice as max_price;
+-- task1 : create a sp and calculate the count of cars by their fuel type.
+ 
+-- count the no of cars by their colors. using inout parameter 
+set @cnt = "grey";
+call inout_para(@cnt);
+select @cnt as total_count_by_colors;
+ 
+-- CREATE DEFINER=`root`@`localhost` PROCEDURE `in_para`(in n int)
+-- BEGIN
+-- select * from vehicle limit n;
+-- END
+
+-- out para 
+-- REATE DEFINER=`root`@`localhost` PROCEDURE `out_para`(out mprice int)
+-- BEGIN
+-- select max(price) into mprice from vehicle;
+-- END
+
+-- in out para 
+-- CREATE DEFINER=`root`@`localhost` PROCEDURE `inout_para`(inout cnt varchar(20))
+-- BEGIN
+-- select count(vehicle_id) into cnt from vehicle where 
+-- color = cnt;
+-- END
+
+
+
+
+
+
+
+
+
+
+
+
+
